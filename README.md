@@ -5,18 +5,19 @@ A command-line application showing connections recently blocked by Windows Firew
 ## Usage
 
 ```
-git clone https://github.com/milan11/firewall-log.git
-cd firewall-log/FirewallLog
+git clone https://github.com/milan11/firewall_log.git
+cd firewall_log/FirewallLog
 dotnet build
 ```
 
 Then, run FirewallLog.exe as Administrator.
 Running as Administrator can be configured to happen automatically:
+
 - FirewallLog.exe Properties
 - Compatibility tab
 - check Run this program as an administrator
 
-The application waits for the Enter key at the end (by calling ```Console.ReadLine()```) so that the console window stays open.
+The application waits for the Enter key at the end (by calling `Console.ReadLine()`) so that the console window stays open.
 
 ## When to use
 
@@ -32,6 +33,7 @@ When you run some server on your computer and connecting to it does not work, yo
 By default, Windows Firewall allows all outgoing connections.
 
 If you want to block all outgoing connections globally by default by:
+
 - start Windows Defender Firewall with Advanced Security
 - in the left tree, right click on: Windows Defender Firewall with Advanced Security on Local Computer
 - choose Properties
@@ -45,11 +47,13 @@ Then you will often want to check what was actually blocked. This utility shows 
 ![Screenshot](./screenshot.png)
 
 Each entry contains:
+
 ```
 <date> <time> <direction IN/OUT> <protocol TCP/UDP> <source IP> <source port> > <target IP> <target PORT> <port service> <process executable name> <process PID> <process executable path>
 ```
 
 If it is a service, the entry additionally contains (in parentheses):
+
 ```
 <service name> <service display name> <service executable path>
 ```
